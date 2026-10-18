@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nunoo · Ayuda para creadores y streamers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECE9F6;--ink:#1B1740;--muted:#5A5680;--line:#CFCAE6;--on:#fff;--on-dc:#10231C;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17142B;--ink:#EEEBFF;--muted:#A9A4D0;--line:#3A3566}}
+:root[data-theme="dark"]{--bg:#17142B;--ink:#EEEBFF;--muted:#A9A4D0;--line:#3A3566}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;font-weight:800;margin:0;line-height:1.05}
+header{padding:56px 0 32px}
+h1{font-size:clamp(72px,19vw,168px);letter-spacing:-.045em}
+.lead{max-width:36ch;font-size:clamp(19px,3vw,24px);color:var(--muted);margin:16px 0 0}
+.deck{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));padding:16px 0 40px}
+.tile{display:flex;flex-direction:column;gap:12px;min-height:270px;padding:24px;border-radius:26px;text-decoration:none;color:var(--on);transition:transform .15s}
+.tile:hover,.tile:focus-visible{transform:translateY(-4px)}
+.tile:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.tile h2{font-size:34px}
+.tile p{margin:0}
+.tile span{margin-top:auto;font-weight:600;border-top:1px solid rgba(255,255,255,.4);padding-top:10px}
+.yt{background:#D42D22}.tw{background:#6B4DF7}.dc{background:#2FC48D;color:var(--on-dc)}
+.dc span{border-color:rgba(16,35,28,.3)}
+.how{padding:8px 0 64px;max-width:62ch}
+.how h2{font-size:clamp(28px,5vw,40px);margin-bottom:12px}
+.how ol{margin:0;padding-left:22px}
+.how li{margin:8px 0}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:15px}
+footer a{color:var(--ink);font-weight:600}
+.about{display:inline-block;margin-top:18px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+.about:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Nunoo</h1>
+<p class="lead">Ayuda personal para YouTubers y streamers: te cuento lo que sé y te ayudo yo mismo.</p>
+<a class="about" href="https://nunoosobremi.vercel.app">Sobre mí →</a>
+</header>
+<main>
+<section class="deck" aria-label="Servicios de Nunoo">
+<a class="tile yt" href="https://nunooyt.vercel.app"><h2>YouTube</h2><p>Ideas para tus vídeos, guion y edición.</p><span>Ver planes</span></a>
+<a class="tile tw" href="https://nunootw.vercel.app"><h2>Twitch y OBS</h2><p>Moderación, ajustes de Twitch, OBS y overlays.</p><span>Ver planes</span></a>
+<a class="tile dc" href="https://nunoodc.vercel.app"><h2>Discord</h2><p>Servidores de Discord para tu comunidad.</p><span>Ver servidores</span></a>
+</section>
+<section class="how" aria-labelledby="h">
+<h2 id="h">Cómo funciona</h2>
+<ol>
+<li>Eliges la sección y el plan que mejor encaja contigo.</li>
+<li>Me escribes y me cuentas qué necesitas.</li>
+<li>Lo resolvemos juntos y te lo dejo funcionando.</li>
+</ol>
+</section>
+</main>
+<footer><a href="https://nunoosobremi.vercel.app">Sobre mí</a> · <a href="https://nunoocontacto.vercel.app">Contacto</a> · Hecho por Nunoo.</footer>
+</div>
+</body>
+</html>

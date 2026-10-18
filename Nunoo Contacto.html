@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nunoo · Contacto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECE9F6;--ink:#1B1740;--muted:#5A5680;--card:#fff;--line:#CFCAE6;--dc:#2FC48D;--dk:#10231C;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17142B;--ink:#EEEBFF;--muted:#A9A4D0;--card:#221E3F;--line:#3A3566}}
+:root[data-theme="dark"]{--bg:#17142B;--ink:#EEEBFF;--muted:#A9A4D0;--card:#221E3F;--line:#3A3566}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;font-weight:800;margin:0;line-height:1.05}
+a{color:var(--ink)}
+.top{padding:20px 0 0;font-weight:600}
+header{padding:28px 0}
+h1{font-size:clamp(52px,13vw,112px);letter-spacing:-.04em}
+.lead{max-width:36ch;font-size:clamp(19px,3vw,23px);color:var(--muted);margin:14px 0 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));padding-bottom:32px}
+.card{border-radius:24px;padding:26px;border:2px solid var(--line);background:var(--card)}
+.card.main{background:var(--dc);border-color:var(--dc);color:var(--dk)}
+.tag{display:inline-block;font-weight:600;font-size:14px;margin-bottom:10px;opacity:.85}
+.card h2{font-size:32px;margin-bottom:8px}
+.card p{margin:0 0 14px}
+.handle{font:800 clamp(30px,8vw,40px)/1.1 "Bricolage Grotesque",sans-serif;word-break:break-all;margin:6px 0 16px;user-select:all}
+button{font:600 17px Figtree,sans-serif;color:#fff;background:var(--dk);border:0;border-radius:14px;padding:12px 22px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.main button:focus-visible{outline-color:var(--dk)}
+#st{display:block;min-height:1.6em;margin-top:10px;font-weight:600}
+.mail{font-weight:600;word-break:break-all}
+.tell{padding:0 0 56px;max-width:60ch}
+.tell h2{font-size:clamp(26px,5vw,36px);margin-bottom:10px}
+.tell ul{margin:0;padding-left:22px}
+.tell li{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://nunoo.vercel.app">Nunoo</a> / Contacto</div>
+<header>
+<h1>Contacto</h1>
+<p class="lead">Escríbeme por Discord y hablamos de lo que necesites.</p>
+</header>
+<main>
+<section class="grid" aria-label="Formas de contacto">
+<article class="card main">
+<span class="tag">Contacto principal</span>
+<h2>Discord</h2>
+<div class="handle" id="handle">nunooo__</div>
+<p>Añádeme o mándame un mensaje directo y dime qué plan te interesa.</p>
+<button id="copy" type="button">Copiar usuario</button>
+<span id="st" aria-live="polite"></span>
+</article>
+<article class="card">
+<span class="tag">Si hay algún problema</span>
+<h2>Correo</h2>
+<p><a class="mail" href="mailto:nuno.llaofr@gmail.com?subject=Problema%20con%20Nunoo">nuno.llaofr@gmail.com</a></p>
+<p>Escríbeme aquí si no puedes contactarme por Discord o si algo ha salido mal con un servicio.</p>
+</article>
+</section>
+<section class="tell" aria-labelledby="t">
+<h2 id="t">Qué contarme</h2>
+<ul>
+<li>Qué servicio o plan te interesa.</li>
+<li>Tu canal de Twitch o YouTube.</li>
+<li>Qué necesitas y para cuándo.</li>
+</ul>
+</section>
+</main>
+<footer>Hecho por Nunoo.</footer>
+</div>
+<script>
+var st=document.getElementById("st");
+document.getElementById("copy").addEventListener("click",function(){
+ var v=document.getElementById("handle").textContent.trim();
+ function manual(){
+  var r=document.createRange();r.selectNodeContents(document.getElementById("handle"));
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  st.textContent="Selecciona el usuario y cópialo: "+v;
+ }
+ try{
+  navigator.clipboard.writeText(v).then(function(){st.textContent="Usuario copiado: "+v},manual);
+ }catch(e){manual()}
+});
+</script>
+</body>
+</html>
